@@ -44,7 +44,7 @@ namespace CleanArch.Domain.Entities
 
             DomainExceptionValidation.When(stock < 0, "Valor do estoque inválido.");
 
-            DomainExceptionValidation.When(image.Length > 250, "Imagem muito pequena. Mínimo 250 caracteres");
+            DomainExceptionValidation.When(image.Length > 250, "Imagem muito pequena. Mínimo 250 caracteres.");
 
             Name = name;
             Description = description;
