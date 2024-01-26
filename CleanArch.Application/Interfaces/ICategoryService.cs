@@ -1,6 +1,6 @@
 ﻿using CleanArch.Application.DTOs;
 
-namespace CleanArch.Application.Services
+namespace CleanArch.Application.Interfaces
 {
     public interface ICategoryService
     {
