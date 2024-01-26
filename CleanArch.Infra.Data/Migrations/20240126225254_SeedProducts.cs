@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
+#nullable disable
+
 namespace CleanArch.Infra.Data.Migrations
 {
     public partial class SeedProducts : Migration
