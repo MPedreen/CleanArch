@@ -27,7 +27,6 @@ namespace CleanArch.Application.Products.Handlers
                                 request.Stock, request.Image, request.CategoryId);
 
                 return await _productRepository.UpdateAsync(product);
-
             }
         }
     }
