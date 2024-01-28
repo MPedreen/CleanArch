@@ -12,6 +12,7 @@ namespace CleanArch.Application.Products.Handlers
         {
             _productRepository = productRepository;
         }
+
         public async Task<Product> Handle(ProductCreateCommand request,
             CancellationToken cancellationToken)
         {
@@ -19,9 +20,7 @@ namespace CleanArch.Application.Products.Handlers
                               request.Stock, request.Image);
 
             if (product == null)
-            {
                 throw new ApplicationException($"Error creating entity.");
-            }
             else
             {
                 product.CategoryId = request.CategoryId;
