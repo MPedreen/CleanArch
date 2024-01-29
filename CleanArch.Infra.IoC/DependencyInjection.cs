@@ -25,6 +25,9 @@ namespace CleanArch.Infra.IoC
             services.AddScoped<IProductService, ProductService>();
             services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
 
+            var myHandlers = AppDomain.CurrentDomain.Load("CleanArch.Application");
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(myHandlers));
+
             return services;
         }
     }
