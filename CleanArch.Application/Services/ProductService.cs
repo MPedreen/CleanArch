@@ -3,8 +3,6 @@ using CleanArch.Application.DTOs;
 using CleanArch.Application.Interfaces;
 using CleanArch.Application.Products.Commands;
 using CleanArch.Application.Products.Queries;
-using CleanArch.Domain.Entities;
-using CleanArch.Domain.Interfaces;
 using MediatR;
 
 namespace CleanArch.Application.Services
@@ -43,17 +41,17 @@ namespace CleanArch.Application.Services
             return _mapper.Map<ProductDTO>(result);
         }
 
-        //public async Task<ProductDTO> GetProductCategory(int? id)
-        //{
-        //    var productByIdQuery = new GetProductByIdQuery(id.Value);
+        public async Task<ProductDTO> GetProductCategory(int? id)
+        {
+            var productByIdQuery = new GetProductByIdQuery(id.Value);
 
-        //    if (productByIdQuery == null)
-        //        throw new Exception($"Entity could not be loaded.");
+            if (productByIdQuery == null)
+                throw new Exception($"Entity could not be loaded.");
 
-        //    var result = await _mediator.Send(productByIdQuery);
+            var result = await _mediator.Send(productByIdQuery);
 
-        //    return _mapper.Map<ProductDTO>(result);
-        //}
+            return _mapper.Map<ProductDTO>(result);
+        }
 
         public async Task Add(ProductDTO productDto)
         {
