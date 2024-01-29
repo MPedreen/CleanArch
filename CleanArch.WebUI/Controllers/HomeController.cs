@@ -8,5 +8,10 @@ namespace CleanArch.WebUI.Controllers
         {
             return View();
         }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
     }
 }
