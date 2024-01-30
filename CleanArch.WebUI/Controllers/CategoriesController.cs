@@ -1,4 +1,5 @@
-﻿using CleanArch.Application.Interfaces;
+﻿using CleanArch.Application.DTOs;
+using CleanArch.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArch.WebUI.Controllers
