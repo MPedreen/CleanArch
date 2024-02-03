@@ -33,15 +33,12 @@ namespace CleanArch.Infra.Data.Identity
             var result = await _userManager.CreateAsync(applicationUser, password);
 
             if (result.Succeeded)
-            {
                 await _signInManager.SignInAsync(applicationUser, isPersistent: false);
-            }
+
             return result.Succeeded;
         }
 
         public async Task Logout()
-        {
-            await _signInManager.SignOutAsync();
-        }
+            => await _signInManager.SignOutAsync();
     }
 }

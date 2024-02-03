@@ -31,9 +31,7 @@ namespace CleanArch.Infra.Data.Identity
                 IdentityResult result = _userManager.CreateAsync(user, "Numsey#2021").Result;
 
                 if (result.Succeeded)
-                {
                     _userManager.AddToRoleAsync(user, "User").Wait();
-                }
             }
 
             if (_userManager.FindByEmailAsync("admin@localhost").Result == null)
@@ -50,9 +48,7 @@ namespace CleanArch.Infra.Data.Identity
                 IdentityResult result = _userManager.CreateAsync(user, "Numsey#2021").Result;
 
                 if (result.Succeeded)
-                {
                     _userManager.AddToRoleAsync(user, "Admin").Wait();
-                }
             }
 
         }
