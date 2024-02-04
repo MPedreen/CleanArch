@@ -14,12 +14,10 @@ namespace CleanArch.WebUI.Controllers
 
         [HttpGet]
         public IActionResult Login(string returnUrl)
-        {
-            return View(new LoginViewModel()
+            => View(new LoginViewModel()
             {
                 ReturnUrl = returnUrl
             });
-        }
 
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
@@ -29,9 +27,8 @@ namespace CleanArch.WebUI.Controllers
             if (result)
             {
                 if (string.IsNullOrEmpty(model.ReturnUrl))
-                {
                     return RedirectToAction("Index", "Home");
-                }
+
                 return Redirect(model.ReturnUrl);
             }
             else
@@ -43,9 +40,7 @@ namespace CleanArch.WebUI.Controllers
 
         [HttpGet]
         public IActionResult Register()
-        {
-            return View();
-        }
+            => View();
 
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
@@ -53,9 +48,7 @@ namespace CleanArch.WebUI.Controllers
             var result = await _authentication.RegisterUser(model.Email, model.Password);
 
             if (result)
-            {
                 return Redirect("/");
-            }
             else
             {
                 ModelState.AddModelError(string.Empty, "Invalid register attempt (password must be strong.");
