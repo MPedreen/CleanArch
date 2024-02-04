@@ -1,8 +1,11 @@
+using CleanArch.Infra.IoC;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddInfrastructureAPI(builder.Configuration);
 
 var app = builder.Build();
 
