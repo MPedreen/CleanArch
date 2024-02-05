@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CleanArch.Domain.Account;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArch.API.Controllers
 {
@@ -6,6 +7,12 @@ namespace CleanArch.API.Controllers
     [ApiController]
     public class TokenController : ControllerBase
     {
+        private readonly IAuthenticate _authentication;
 
+        public TokenController(IAuthenticate authentication)
+        {
+            _authentication = authentication ?? 
+                throw new ArgumentNullException(nameof(authentication));
+        }
     }
 }
