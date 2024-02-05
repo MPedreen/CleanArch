@@ -1,4 +1,6 @@
-﻿namespace CleanArch.API.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace CleanArch.API.Models
 {
     public class RegisterModel
     {
