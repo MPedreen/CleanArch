@@ -22,6 +22,7 @@ app.UseStaticFiles();
 app.UseRouting();
 SeedUserRoles(app);
 
+app.UseStatusCodePages();
 app.UseAuthentication();
 app.UseAuthorization();
 
